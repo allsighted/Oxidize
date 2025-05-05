@@ -1,0 +1,1 @@
+/home/okai/Documents/GitHub/xyz/Rust/TheBook-walkthru/chapter-3_Common-Programming-Concepts/lyrics_on_arrowdown/target/debug/lyrics_on_arrowdown: /home/okai/Documents/GitHub/xyz/Rust/TheBook-walkthru/chapter-3_Common-Programming-Concepts/lyrics_on_arrowdown/src/main.rs
