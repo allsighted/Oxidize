@@ -39,6 +39,8 @@ impl Map {
                 // Calculate distance from current plot to this plot
                 let dx = plot.x - current_plot.x;
                 let dy = plot.y - current_plot.y;
+                // Euclidean distance is a fundamental mathematical concept that measures the straight-line distance between two points in a Euclidean space
+                // This formula is derived from the Pythagorean theorem where the distance is the length of the hypotenuse of a right triangle formed by the differences in coordinates.
                 let distance = (dx.powi(2) + dy.powi(2)).sqrt();
                 
                 if distance < min_distance {
