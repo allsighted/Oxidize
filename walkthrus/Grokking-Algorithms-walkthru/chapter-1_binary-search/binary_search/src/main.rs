@@ -47,10 +47,8 @@ fn binary_search_names<'a>(names: &'a Vec<&'static str>, name: &String) -> Optio
 }
 
 fn enum_search<'a>(names: &'a Vec<&'static str>, name: &String) -> Option<usize> {
-    let len = names.len();
-
     for (i, n) in names.iter().enumerate() {
-        println!("{}: {}", i, n);
+        // println!("{}: {}", i, n);
         if n == name {
             return Some(i)
         }
@@ -61,14 +59,32 @@ fn enum_search<'a>(names: &'a Vec<&'static str>, name: &String) -> Option<usize>
 
 #[cfg(test)]
 mod tests {
+    use crate::{binary_search_names, enum_search};
+
     #[test]
-    fn exploration() {
-        assert_eq!(2+2, 4);
+    fn assert_binary_to_loop_search() {
+        let mut unique_names: Vec<&'static str> = vec![
+            "Emma",
+            "Liam",
+            "Olivia",
+            "Noah",
+            "Ava",
+            "William",
+            "Sophia",
+            "James",
+            "Isabella",
+            "Benjamin"
+        ];
+
+        unique_names.sort();
+
+        for name in &unique_names {
+            let loop_index = enum_search(&unique_names, &name.to_string()).unwrap();
+            let (binary_index, _) = binary_search_names(&unique_names, &name.to_string()).unwrap_or((0, 0));
+            println!("Checking name: {}", name);
+            println!("loop_index: {} | bin_index: {}", loop_index, binary_index);
+            assert_eq!(loop_index, binary_index);
+        }
+
     }
-
-
-    // #[test]
-    // fn another() {
-    //     panic!("Make this test fail");
-    // }
 }
