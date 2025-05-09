@@ -104,7 +104,68 @@ fn main() {
         7 => remove_fancy_hat(),
         _ => (), // nothing else happens;We can express that by using the unit value (the empty tuple type)
     }
+
+    let config_max = Some(3u8);
+    match config_max {
+        Some(max) => println!("The maximum is configured to be {max}"),
+        _ => (),
+    }
+    // Instead, we could write this in a shorter way using if let.
+    let config_max = Some(3u8);
+    if let Some(max) = config_max {
+        println!("The maximum is configured to be {max}");
+    }
+
+    let coin = Coin::Quarter(UsState::Alabama);
+    let mut count = 0;
+    if let Coin::Quarter(ref state) = coin {
+        println!("State quarter from {state:?}!");
+    } else {
+        count += 1;
+    }
+
+    describe_state_quarter(coin);
+
 }
+
+fn describe_state_quarter(coin: Coin) -> Option<String> {
+    let Coin::Quarter(state) = coin else {
+        return None;
+    };
+
+    if state.existed_in(1900) {
+        println!("{state:?} is pretty old, for America!");
+        Some(format!("{state:?} is pretty old, for America!"))
+    } else {
+        Some(format!("{state:?} is relatively new."))
+    }
+}
+// fn describe_state_quarter(coin: Coin) -> Option<String> {
+//     let state = if let Coin::Quarter(state) = coin {
+//         state
+//     } else {
+//         return None;
+//     };
+
+//     if state.existed_in(1900) {
+//         println!("{state:?} is pretty old, for America!");
+//         Some(format!("{state:?} is pretty old, for America!"))
+//     } else {
+//         Some(format!("{state:?} is relatively new."))
+//     }
+// }
+// fn describe_state_quarter(coin: Coin) -> Option<String> {
+//     if let Coin::Quarter(state) = coin {
+//         if state.existed_in(1900) {
+//             Some(format!("{state:?} is pretty old, for America!"))
+//         } else {
+//             Some(format!("{state:?} is relatively new."))
+//         }
+//     } else {
+//         None
+//     }
+// }
+
 
 fn add_fancy_hat() {}
 fn remove_fancy_hat() {}
@@ -131,6 +192,15 @@ fn value_in_cents(coin: Coin) -> u8 {
         Coin::Quarter(state) => {
             println!("State quarter from {state:?}!");
             25
+        }
+    }
+}
+impl UsState {
+    fn existed_in(&self, year: u16) -> bool {
+        match self {
+            UsState::Alabama => year >= 1819,
+            UsState::Alaska => year >= 1959,
+            // -- snip --
         }
     }
 }
