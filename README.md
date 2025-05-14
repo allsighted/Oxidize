@@ -4,10 +4,15 @@
 ### official
 - [Rust Documentation; an overview of the documentation provided by the Rust project.](https://doc.rust-lang.org/)
 - [The Book](https://doc.rust-lang.org/stable/book/)
-- [Rust by Example Book](https://doc.rust-lang.org/stable/rust-by-example/)
+- [The Rust Reference Book](https://doc.rust-lang.org/stable/reference)
+- [Rust Style Guide Book](https://doc.rust-lang.org/stable/style-guide)
 - [Cookin' with Rust; a collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem.](https://rust-lang-nursery.github.io/rust-cookbook)
 - [Crates.io](https://crates.io)
 - [rustlings.cool](https://rustlings.cool/)
+- [The Rust API Guidelines Book](https://rust-lang.github.io/api-guidelines/)
+- [Rust by Example Book](https://doc.rust-lang.org/stable/rust-by-example/)
+- [The Rustonomicon: The Dark Arts of Unsafe Rust Book](https://doc.rust-lang.org/stable/nomicon)
+- [The Embedded Rust Book](https://doc.rust-lang.org/stable/embedded-book)
     - [rustlings.cool github](https://github.com/rust-lang/rustlings)
 
 ### microsoft
