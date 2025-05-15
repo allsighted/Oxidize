@@ -100,7 +100,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-fn  run_repl(company: &mut Company) {
+fn run_repl(company: &mut Company) {
     use std::io::{self, Write};
 
     loop {
