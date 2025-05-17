@@ -16,6 +16,9 @@
 - [The Embedded Rust Book](https://doc.rust-lang.org/stable/embedded-book)
     - [rustlings.cool github](https://github.com/rust-lang/rustlings)
 
+### crates/libs
+- **thiserror** For application-specific error types with minimal boilerplate
+
 ### microsoft
 - [Beginner's Series to Rust](https://learn.microsoft.com/en-us/shows/beginners-series-to-rust/)
 - [Getting Started With Rust: Rust Basics Recap and Discussion](https://techcommunity.microsoft.com/discussions/microsoftreactor/getting-started-with-rust-rust-basics-recap-and-discussion/3662467)
